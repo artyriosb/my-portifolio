@@ -3,6 +3,7 @@ import Avatar from "../../../../assets/images/avatar.png";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import EmailIcon from "@mui/icons-material/Email";
 import SteyledButton from "../../../../components/StyledButton/StyledButton";
+import theme from "../../../../theme";
 
 const Hero = () => {
 
@@ -11,7 +12,13 @@ const Hero = () => {
     display: "flex",
     alignItems: "center",
     height: "100vh",
-  }))
+    [theme.breakpoints.up('xs')]: {
+      paddingTop: "100px",
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: "0",
+    },
+  }));
 
   const StyledImg = styled("img")(({ theme }) => ({
     width: "80%",
