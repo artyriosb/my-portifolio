@@ -3,9 +3,10 @@ import { ReactNode } from "react";
 
 interface SteyledButtonProps {
     children: ReactNode
+    onClick: () => void
 }
 
-const SteyledButton: React.FC<SteyledButtonProps> = ({ children }) => {
+const SteyledButton: React.FC<SteyledButtonProps> = ({ children,onClick }) => {
 
     const StyledButton = styled("button")(({theme}) => ({
 
@@ -27,7 +28,7 @@ const SteyledButton: React.FC<SteyledButtonProps> = ({ children }) => {
 
     return (
       <>
-        <StyledButton>
+        <StyledButton onClick={onClick}>
             { children }
         </StyledButton>
       </>
